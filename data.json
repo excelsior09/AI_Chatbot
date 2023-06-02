@@ -1,77 +1,91 @@
 {"intents":[
     {
-        "tag":"prodiLain",
-        "patterns":["Sistem Informasi",
-        "Arsitektur",
-        "Desain Produk",
-        "Manajemen",
-        "Akuntansi",
-        "Dokter",
-        "Biologi",
-        "bahasa inggris",
-        "filsafat keilahian",
-        "teologi"],
+        "tag":"prodilain",
         "responses":"Kami tidak mengetahui informasi tentang prodi lain"
     },
     {
-        "tag":"DPFP",
-        "patterns":["DPFP"],
+        "tag":"dpfp",
         "responses":"DPFP Informatika UKDW adalah Rp."
     },
     {
-        "tag":"SPP",
-        "patterns":["SPP"],
+        "tag":"spp",
         "responses":"SPP Informatika UKDW adalah Rp."
     },
     {
-        "tag":"hargaSKS",
-        "patterns":["harga sks"],
+        "tag":"hargasks",
         "responses":"Harga tiap SKS Informatika UKDW adalah Rp."
     },
     {
-        "tag":"persyaratan",
-        "patterns":["DPFP"],
+        "tag":"syarat",
         "responses":"Untuk persyaratannya,"
     },
     {
         "tag":"waktu",
-        "patterns":["DPFP"],
         "responses":"Waktu pendaftaran adalah"
     },
     {
         "tag":"proses",
-        "patterns":["DPFP"],
         "responses":"DPFP Informatika UKDW adalah Rp."
     },
     {
         "tag":"biaya",
-        "patterns":["DPFP"],
         "responses":"biaya pendaftaran adalah Rp."
     },
     {
-        "tag":"potonganPrestasi",
-        "patterns":["DPFP"],
+        "tag":"potonganprestasi",
         "responses":"Potongan biaya DPFP untuk seleksi prestasi"
     },
     {
-        "tag":"potonganMandiri",
-        "patterns":["DPFP"],
+        "tag":"potonganmandiri",
         "responses":"Potongan biaya DPFP untuk seleksi mandiri"
     },
     {
         "tag":"beasiswa",
-        "patterns":["DPFP"],
         "responses":"penjelasan ttg beasiswa"
     },
     {
         "tag":"profil",
-        "patterns":["DPFP"],
         "responses":"penjelasan ttg profil"
     },
     {
         "tag":"matkul",
-        "patterns":["DPFP"],
         "responses":"waduh"
+    }
+],
+"programstudi":[
+    {
+        "fakultas":"teknologiinformasi",
+        "prodi":["informatika","sisteminformasi"]
+    },
+    {
+        "fakultas":"arsitekturdesain",
+        "prodi":["desainProduk","arsitektur"]
+    },
+    {
+        "fakultas":"teologi",
+        "prodi":["filsafatdeilahian"]
+    },
+    {
+        "fakultas":"bisnis",
+        "prodi":["akuntansi","manajemen"]
+    },
+    {
+        "fakultas":"kedokteran",
+        "prodi":["dokter"]
+    },
+    {
+        "fakultas":"bioteknologi",
+        "prodi":["biologi"]
+    },
+    {
+        "fakultas":"kependidikanhumaniora",
+        "prodi":["bahasaInggris","humanitas"]
+    }
+],
+"alternatives":[
+    {
+        "tag":"biaya",
+        "alt":["biaya","harga","uang"]
     }
 ]
 }
