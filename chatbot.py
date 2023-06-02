@@ -1,5 +1,4 @@
 import json
-import re
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
 with open("data.json") as file:
@@ -55,19 +54,21 @@ class ChatBot:
                 inp.append(inp[i]+inp[i+1])
                 del_list.append(inp[i])
                 del_list.append(inp[i+1])
-            for j in range(len(inp[i:])):
-                if inp[i] == "harga" and inp[j] == "sks":
-                    inp.append(inp[i]+inp[j])
-                    del_list.append(inp[i])
-                    del_list.append(inp[j])
-                    break
-        for i in inp:
-            if i in del_list:
-                inp.remove(i)
+            if inp[i] == "harga":
+                for j in range(len(inp[i:])):
+                    if inp[j] == "sks":
+                        inp.append(inp[i]+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
+        inp = [kata for kata in inp if kata not in del_list]
 
         #fact listing
         self.fact=[]
         for i in inp:
+            for tag,alternates in self.alt.items():
+                if i in alternates:
+                    self.fact.append(tag)
             if i in self.label or i in self.prodi:
                 self.fact.append(i)
         
@@ -78,8 +79,9 @@ class ChatBot:
             for i in self.fact:
                 if i in self.prodi and i != "informatika":
                     self.fact.remove(i)
-                    if "prodiLain" not in self.fact:
-                        self.fact.append("prodiLain")
+                    if "prodilain" not in self.fact:
+                        self.fact.append("prodilain")
+
             if 'dpfp' in self.fact and 'spp' in self.fact and 'hargasks' in self.fact:
                 if 'biaya' not in self.fact:
                     self.fact.append('biaya')
@@ -87,7 +89,18 @@ class ChatBot:
                 self.fact.remove('spp')
                 self.fact.remove('hargasks')
 
+        #clear duplicates if any
+        self.fact = list(set(self.fact))
+
         #getting response
+        if  'prodilain' in self.fact:
+            return self.resp[self.label.index('prodilain')]
+        if 'potong' in self.fact:
+            return self.resp[self.label.index('potonganprestasi')]+"\r\n"+self.resp[self.label.index('potonganmandiri')]
+        if 'daftar' in self.fact:
+            return self.resp[self.label.index('persyaratan')]+"\r\n"+self.resp[self.label.index('waktu')]+"\r\n"+self.resp[self.label.index('biayadaftar')]
+        if 'biaya' in self.fact:
+            return self.resp[self.label.index('dpfp')]+"\r\n"+self.resp[self.label.index('spp')]+"\r\n"+self.resp[self.label.index('hargasks')]
         for i in self.fact:
             if i in self.label:
                 return self.resp[self.label.index(i)]
@@ -95,4 +108,4 @@ class ChatBot:
             return "Maaf kami tidak mengetahui jawaban dari pertanyaanmu, silahkan hubungi admisi di ig:@pmbukdwjogja, atau ke kantor Admisi & Promosi di Gedung Agape UKDW"
 
 chatbot = ChatBot("informatika")
-print(chatbot.get_response("berapakah dpfp di informatika"))
+print(chatbot.get_response("berapakah harga kuliahnya?"))

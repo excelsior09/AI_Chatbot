@@ -16,6 +16,10 @@
         "responses":"Harga tiap SKS Informatika UKDW adalah Rp."
     },
     {
+        "tag":"seleksi",
+        "responses":"Ada 3 seleksi..."
+    },
+    {
         "tag":"syarat",
         "responses":"Untuk persyaratannya,"
     },
@@ -24,11 +28,7 @@
         "responses":"Waktu pendaftaran adalah"
     },
     {
-        "tag":"proses",
-        "responses":"DPFP Informatika UKDW adalah Rp."
-    },
-    {
-        "tag":"biaya",
+        "tag":"biayadaftar",
         "responses":"biaya pendaftaran adalah Rp."
     },
     {
@@ -59,11 +59,11 @@
     },
     {
         "fakultas":"arsitekturdesain",
-        "prodi":["desainProduk","arsitektur"]
+        "prodi":["desainproduk","arsitektur"]
     },
     {
         "fakultas":"teologi",
-        "prodi":["filsafatdeilahian"]
+        "prodi":["filsafatkeilahian"]
     },
     {
         "fakultas":"bisnis",
@@ -79,7 +79,7 @@
     },
     {
         "fakultas":"kependidikanhumaniora",
-        "prodi":["bahasaInggris","humanitas"]
+        "prodi":["bahasainggris","humanitas"]
     }
 ],
 "alternatives":[
