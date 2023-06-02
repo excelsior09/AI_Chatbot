@@ -1,26 +1,27 @@
-from chatterbot import ChatBot
-from chatterbot.trainers import ListTrainer
-from chatterbot.trainers import ChatterBotCorpusTrainer
+import json
 
-# Creating ChatBot Instance
-chatbot = ChatBot('CoronaBot')
+with open("intents.json") as file:
+	data = json.load(file)
 
- # Training with Personal Ques & Ans 
-conversation = [
-    "Hello",
-    "Hi there!",
-    "How are you doing?",
-    "I'm doing great.",
-    "That is good to hear",
-    "Thank you.",
-    "You're welcome."
-]
+class ChatBot:
+    nama=""
+    resp = []
+    label = []   
+    
+    def tes(self):
+        for intent in data['intents']:
+            self.label.append(intent['tag'])
+            self.resp.append(intent['responses'])
+    
+    def __init__(self, nama):
+        self.nama = nama
+    def get_response(self, str):
+        inp = str.split(' ')
+        for i in inp:
+            for j in self.label:
+                if i == j:
+                    return self.resp[self.label.index(j)]
 
-trainer = ListTrainer(chatbot)
-trainer.train(conversation)
-
-# Training with English Corpus Data 
-trainer_corpus = ChatterBotCorpusTrainer(chatbot)
-trainer_corpus.train(
-    'chatterbot.corpus.english'
-) 
+chatbot = ChatBot('Informatika')
+chatbot.tes()
+print(chatbot.get_response("DPFP"))

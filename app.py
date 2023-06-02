@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request
-
+from ChatBot import *
+   
+    
 app = Flask(__name__)
 app.static_folder = 'static'
+chatbot=ChatBot("informatika")
 
 @app.route("/")
 def home():
@@ -10,7 +13,7 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(chatbot.get_response(userText))
+    return str(chatbot.get_response(str(userText)))
 
 if __name__ == "__main__":
     app.run() 
