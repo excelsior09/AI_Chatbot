@@ -32,9 +32,9 @@ class ChatBot:
         stemmer = factory.create_stemmer()
         
         #parsing
-        inp = re.sub(r'[^a-zA-Z]','', str)
-        inp = stemmer.stem(inp)
-        inp = inp.lower().split(' ')
+        inp = str.lower().split(' ')
+        for i in range(len(inp)):
+            inp[i] = stemmer.stem(inp[i])
 
         #phrase check
         del_list =[]
@@ -93,3 +93,6 @@ class ChatBot:
                 return self.resp[self.label.index(i)]
         else:
             return "Maaf kami tidak mengetahui jawaban dari pertanyaanmu, silahkan hubungi admisi di ig:@pmbukdwjogja, atau ke kantor Admisi & Promosi di Gedung Agape UKDW"
+
+chatbot = ChatBot("informatika")
+print(chatbot.get_response("berapakah dpfp di informatika"))
