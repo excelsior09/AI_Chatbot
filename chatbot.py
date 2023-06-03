@@ -61,6 +61,27 @@ class ChatBot:
                         del_list.append(inp[i])
                         del_list.append(inp[j])
                         break
+            if inp[i] == "biaya":
+                for j in range(len(inp)):
+                    if inp[j] == "daftar":
+                        inp.append(inp[i]+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
+            if inp[i] == "potong":
+                for j in range(len(inp)):
+                    if inp[j] == "mandiri" or inp[j]=="seleksimandiri":
+                        inp.append(inp[i]+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
+            if inp[i] == "potong":
+                for j in range(len(inp)):
+                    if inp[j] == "prestasi" or inp[j]=="seleksiprestasi":
+                        inp.append(inp[i]+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
         inp = [kata for kata in inp if kata not in del_list]
 
         #fact listing
@@ -88,7 +109,13 @@ class ChatBot:
                 self.fact.remove('dpfp')
                 self.fact.remove('spp')
                 self.fact.remove('hargasks')
-
+            if 'syarat' in self.fact and 'waktu' in self.fact and 'biayadaftar' in self.fact:
+                if 'daftar' not in self.fact:
+                    self.fact.append('daftar')
+                self.fact.remove('syarat')
+                self.fact.remove('waktu')
+                self.fact.remove('biayadaftar')
+            
         #clear duplicates if any
         self.fact = list(set(self.fact))
 
@@ -96,16 +123,19 @@ class ChatBot:
         if  'prodilain' in self.fact:
             return self.resp[self.label.index('prodilain')]
         if 'potong' in self.fact:
-            return self.resp[self.label.index('potonganprestasi')]+"\r\n"+self.resp[self.label.index('potonganmandiri')]
+            return self.resp[self.label.index('potongprestasi')]+"\r\n"+self.resp[self.label.index('potongmandiri')]
         if 'daftar' in self.fact:
-            return self.resp[self.label.index('persyaratan')]+"\r\n"+self.resp[self.label.index('waktu')]+"\r\n"+self.resp[self.label.index('biayadaftar')]
+            return self.resp[self.label.index('syarat')]+"\r\n"+self.resp[self.label.index('waktu')]+"\r\n"+self.resp[self.label.index('biayadaftar')]
         if 'biaya' in self.fact:
             return self.resp[self.label.index('dpfp')]+"\r\n"+self.resp[self.label.index('spp')]+"\r\n"+self.resp[self.label.index('hargasks')]
+        output=""
         for i in self.fact:
             if i in self.label:
-                return self.resp[self.label.index(i)]
+                output += self.resp[self.label.index(i)]+"\n"
+        if len(output)!=0:
+            return output
         else:
             return "Maaf kami tidak mengetahui jawaban dari pertanyaanmu, silahkan hubungi admisi di ig:@pmbukdwjogja, atau ke kantor Admisi & Promosi di Gedung Agape UKDW"
 
 chatbot = ChatBot("informatika")
-print(chatbot.get_response("berapakah harga kuliahnya?"))
+print(chatbot.get_response("berapa biaya pendaftaran di pmb ukdw?"))
