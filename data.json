@@ -90,6 +90,10 @@
     {
         "tag":"daftar",
         "alt":["daftar"]
+    },
+    {
+        "tag":"profil",
+        "alt":["kurikulum"]
     }
 ]
 }
