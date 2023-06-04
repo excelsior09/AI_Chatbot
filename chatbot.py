@@ -80,6 +80,13 @@ class ChatBot:
                         del_list.append(inp[i])
                         del_list.append(inp[j])
                         break
+            if inp[i] == "harga" or inp[i] == "biaya" or inp[i] == "uang":
+                for j in range(len(inp)):
+                    if inp[j] == "semester":
+                        inp.append("harga"+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
             if inp[i] == "biaya":
                 for j in range(len(inp)):
                     if inp[j] == "daftar":
