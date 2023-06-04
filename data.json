@@ -16,10 +16,6 @@
         "responses":"Harga tiap SKS Informatika UKDW adalah Rp."
     },
     {
-        "tag":"seleksi",
-        "responses":"Ada 3 seleksi..."
-    },
-    {
         "tag":"syarat",
         "responses":"Untuk persyaratannya,"
     },
@@ -85,15 +81,39 @@
 "alternatives":[
     {
         "tag":"biaya",
-        "alt":["biaya","harga","uang"]
+        "alt":["harga","uang"]
     },
     {
         "tag":"daftar",
-        "alt":["daftar"]
+        "alt":["regis","regist","registrasi"]
     },
     {
         "tag":"profil",
         "alt":["kurikulum"]
+    },
+    {
+        "tag":"matkul",
+        "alt":["matakuliah","matpel","ajar"]
+    },
+    {
+        "tag":"beasiswa",
+        "alt":["bantu"]
+    },
+    {
+        "tag":"potong",
+        "alt":["diskon","kurang"]
+    },
+    {
+        "tag":"waktu",
+        "alt":["jadwal"]
+    },
+    {
+        "tag":"syarat",
+        "alt":["tentu","kriteria"]
+    },
+    {
+        "tag":"hargasks",
+        "alt":["hargamatkul"]
     }
 ]
 }

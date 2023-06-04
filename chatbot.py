@@ -54,10 +54,29 @@ class ChatBot:
                 inp.append(inp[i]+inp[i+1])
                 del_list.append(inp[i])
                 del_list.append(inp[i+1])
-            if inp[i] == "harga":
-                for j in range(len(inp[i:])):
+            if inp[i] == "mata" and inp[i+1] == "kuliah":
+                inp.append(inp[i]+inp[i+1])
+                del_list.append(inp[i])
+                del_list.append(inp[i+1])
+            if inp[i] == "seleksi" and inp[i+1] == "mandiri":
+                inp.append(inp[i]+inp[i+1])
+                del_list.append(inp[i])
+                del_list.append(inp[i+1])
+            if inp[i] == "seleksi" and inp[i+1] == "prestasi":
+                inp.append(inp[i]+inp[i+1])
+                del_list.append(inp[i])
+                del_list.append(inp[i+1])
+            if inp[i] == "harga" or inp[i] == "biaya" or inp[i] == "uang":
+                for j in range(len(inp)):
                     if inp[j] == "sks":
-                        inp.append(inp[i]+inp[j])
+                        inp.append("harga"+inp[j])
+                        del_list.append(inp[i])
+                        del_list.append(inp[j])
+                        break
+            if inp[i] == "harga" or inp[i] == "biaya" or inp[i] == "uang":
+                for j in range(len(inp)):
+                    if inp[j] == "matakuliah" or inp[j]=="matkul":
+                        inp.append("harga"+"matkul")
                         del_list.append(inp[i])
                         del_list.append(inp[j])
                         break
@@ -71,14 +90,14 @@ class ChatBot:
             if inp[i] == "potong":
                 for j in range(len(inp)):
                     if inp[j] == "mandiri" or inp[j]=="seleksimandiri":
-                        inp.append(inp[i]+inp[j])
+                        inp.append(inp[i]+"mandiri")
                         del_list.append(inp[i])
                         del_list.append(inp[j])
                         break
             if inp[i] == "potong":
                 for j in range(len(inp)):
                     if inp[j] == "prestasi" or inp[j]=="seleksiprestasi":
-                        inp.append(inp[i]+inp[j])
+                        inp.append(inp[i]+"prestasi")
                         del_list.append(inp[i])
                         del_list.append(inp[j])
                         break
@@ -123,19 +142,19 @@ class ChatBot:
         if  'prodilain' in self.fact:
             return self.resp[self.label.index('prodilain')]
         if 'potong' in self.fact:
-            return self.resp[self.label.index('potongprestasi')]+"\r\n"+self.resp[self.label.index('potongmandiri')]
+            return self.resp[self.label.index('potongprestasi')]+"<br>"+self.resp[self.label.index('potongmandiri')]
         if 'daftar' in self.fact:
-            return self.resp[self.label.index('syarat')]+"\r\n"+self.resp[self.label.index('waktu')]+"\r\n"+self.resp[self.label.index('biayadaftar')]
+            return self.resp[self.label.index('syarat')]+"<br>"+self.resp[self.label.index('waktu')]+"<br>"+self.resp[self.label.index('biayadaftar')]
         if 'biaya' in self.fact:
-            return self.resp[self.label.index('dpfp')]+"\r\n"+self.resp[self.label.index('spp')]+"\r\n"+self.resp[self.label.index('hargasks')]
+            return self.resp[self.label.index('dpfp')]+"<br>"+self.resp[self.label.index('spp')]+"<br>"+self.resp[self.label.index('hargasks')]
         output=""
         for i in self.fact:
             if i in self.label:
-                output += self.resp[self.label.index(i)]+"\n"
+                output += self.resp[self.label.index(i)]+"<br>"
         if len(output)!=0:
             return output
         else:
             return "Maaf kami tidak mengetahui jawaban dari pertanyaanmu, silahkan hubungi admisi di ig:@pmbukdwjogja, atau ke kantor Admisi & Promosi di Gedung Agape UKDW"
 
 chatbot = ChatBot("informatika")
-print(chatbot.get_response("berapa biaya pendaftaran di pmb ukdw?"))
+print(chatbot.get_response("pelajaran?"))
