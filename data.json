@@ -1,5 +1,45 @@
 {"intents":[
     {
+        "tag":"greetings",
+        "patterns":["Halo","Hai","Hi","Hello","Selamat pagi","Selamat malam","Selamat siang","Selamat sore"],
+        "responses":["Halo, ada yang bisa kami bantu?"]
+    },
+    {
+        "tag":"terimakasih",
+        "patterns":["Terimakasih","Makasih","Thanks","Thank you"],
+        "responses":["Sama-sama"]
+    },
+    {
+        "tag":"salam",
+        "patterns":["Assalamualaikum","Assalamu'alaikum"],
+        "responses":["Wa'alaikumsalam"]
+    },
+    {
+        "tag":"jadwal",
+        "patterns":["Jadwal","Jadwal apa","Jadwal apakah"],
+        "responses":["Jadwal kuliah dapat dilihat di link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"]
+    },
+    {
+        "tag":"matkul",
+        "patterns":["Matkul","Matakuliah","Mata kuliah","Mata kuliah apa","Mata kuliah apakah"],
+        "responses":["Mata kuliah dapat dilihat di link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"]
+    },
+    {
+        "tag":"dosen",
+        "patterns":["Dosen","Dosen apa","Dosen apakah"],
+        "responses":["Dosen dapat dilihat di link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"]
+    },
+    {
+        "tag":"karyawan",
+        "patterns":["Karyawan","Karyawan apa","Karyawan apakah"],
+        "responses":["Karyawan dapat dilihat di link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"]
+    },
+    {
+        "tag":"mahasiswa",
+        "patterns":["Mahasiswa","Mahasiswa apa","Mahasiswa apakah"],
+        "responses":["Mahasiswa dapat dilihat di link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"]
+    },
+    {
         "tag":"prodilain",
         "responses":"Kami tidak mengetahui informasi tentang prodi lain"
     },
@@ -90,6 +130,38 @@
     {
         "tag":"daftar",
         "alt":["daftar"]
+    },
+    {
+        "tag":"greetings",
+        "alt":["halo","hai","hi","hello","selamatpagi","selamatmalam","selamat siang","selamat sore"]
+    },
+    {
+        "tag":"terimakasih",
+        "alt":["terimakasih","makasih","thanks","thank you"]
+    },
+    {
+        "tag":"salam",
+        "alt":["salam","assalamualaikum","assalamu'alaikum"]
+    },
+    {
+        "tag":"jadwal",
+        "alt":["jadwal","jadwal apa","jadwal apakah"]
+    },
+    {
+        "tag":"matkul",
+        "alt":["matkul","matakuliah","mata kuliah","mata kuliah apa","mata kuliah apakah"]
+    },
+    {
+        "tag":"dosen",
+        "alt":["dosen","dosen apa","dosen apakah"]
+    },
+    {
+        "tag":"karyawan",
+        "alt":["karyawan","karyawan apa","karyawan apakah"]
+    },
+    {
+        "tag":"mahasiswa",
+        "alt":["mahasiswa","mahasiswa apa","mahasiswa apakah"]
     }
 ]
 }
