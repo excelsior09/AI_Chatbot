@@ -1,51 +1,51 @@
 {"intents":[
     {
         "tag":"prodilain",
-        "responses":"Kami tidak mengetahui informasi tentang prodi lain"
+        "responses":"Maaf yh, P INGPO kurang mengetahui informasi mengenai prodi lain. Mungkin kamu dapat check di link berikut : https://www.ukdw.ac.id/"
     },
     {
         "tag":"dpfp",
-        "responses":"DPFP Informatika UKDW adalah Rp."
+        "responses":"Dana Pengembangan Fasilitas Pendidikan (DPFP) Informatika di UKDW untuk tahun ajaran 2023/2024 adalah Rp 21.000.000,-"
     },
     {
         "tag":"spp",
-        "responses":"SPP Informatika UKDW adalah Rp."
+        "responses":"Sumbangan Pembinaan Pendidikan (SPP) Informatika di UKDW untuk tahun ajaran 2023/2024 adalah Rp 3.000.000,-"
     },
     {
         "tag":"hargasks",
-        "responses":"Harga tiap SKS Informatika UKDW adalah Rp."
+        "responses":"Harga tiap SKS Informatika di UKDW untuk tahun ajaran 2023/2024 adalah Rp 3.000.000,-"
     },
     {
         "tag":"syarat",
-        "responses":"Untuk persyaratannya,"
+        "responses":"Untuk syarat yang harus dipenuhi untuk melakukan pendaftaran yakni lewat pengisian formulir secara online/offline, memiliki scan data seperti Rapor yang dilegalisir, Ijasah/SKHUN, KTP orang tua dan Pas Photo 3x4"
     },
     {
         "tag":"waktu",
-        "responses":"Waktu pendaftaran adalah"
+        "responses":"Waktu pendaftaran di Informatika UKDW berakhir di bulan Juli 2023. Untuk info lebih lengkapnya lakukan follow up lewat IG @pmbukdwjogja."
     },
     {
         "tag":"biayadaftar",
-        "responses":"biaya pendaftaran adalah Rp."
+        "responses":"Biaya pendaftaran adalah sebesar RP 500.000,-"
     },
     {
         "tag":"potongprestasi",
-        "responses":"Potongan biaya DPFP untuk seleksi prestasi"
+        "responses":"Potongan biaya DPFP untuk seleksi prestasi mulai dari 10 hingga 100% loh. Yuk cek di link berikut https://www.ukdw.ac.id/pendaftaran-program-sarjana/"
     },
     {
         "tag":"potongmandiri",
-        "responses":"Potongan biaya DPFP untuk seleksi mandiri"
+        "responses":"Potongan biaya DPFP untuk seleksi mandiri hingga Rp 1.000.000,- loh!. Yuk cek di link berikut https://www.ukdw.ac.id/pendaftaran-program-sarjana/"
     },
     {
         "tag":"beasiswa",
-        "responses":"penjelasan ttg beasiswa"
+        "responses":"Informatika UKDW menerima banyak jalur beasiswa loh! Mulai dari beasiswa program pemerintah hingga dari gereja. Check dilink berikut jika kamu tertarik https://www.ukdw.ac.id/beasiswa/"
     },
     {
         "tag":"profil",
-        "responses":"penjelasan ttg profil"
+        "responses":"Ada 4 profil untuk jurusan Informatika, adapun profilnya yakni User Interface/User Experience Designer, Intelligent System Developer, Database Administrator dan Network Service Supervisor."
     },
     {
         "tag":"matkul",
-        "responses":"waduh, mending langsung cek link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"
+        "responses":"Waduh, agar lebih terstruktur mending langsung cek link berikut https://www.ukdw.ac.id/akademik/fakultas-teknologi-informasi/informatika/"
     }
 ],
 "programstudi":[
